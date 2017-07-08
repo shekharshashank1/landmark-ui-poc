@@ -1,0 +1,15 @@
+<div style="margin-left: 35%;margin-bottom: 2px;" ng-controller="inputSpeechController as spc">
+  <div class="imageboxdiv">
+      <div ng-repeat="currVal in spc.searchHistoryList track by $index">
+        <imagebox info="currVal"></imagebox>
+      </div>  
+  </div>  
+  
+  
+  <form ng-submit="spc.submitForm()">   
+    <input id='input-search-box' ng-model="spc.finalText" name="text" placeholder="which landmark would you like to search??"/>  
+  </form>
+
+  <button ng-if="spc.recLabel === 'start voice input'"  ng-click="spc.start()">{{spc.recLabel}}</button>
+  <button ng-if="spc.recLabel === 'stop voice input'"  ng-click="spc.stop()">{{spc.recLabel}}</button>
+</div>
